@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>운정고등학교 융합체험전</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 상단 대형 카드형 타이틀 -->
+  <header class="hero">
+    <h1>운정고등학교 융합체험전</h1>
+  </header>
+
+  <!-- 지도 섹션 -->
+  <section class="map-section" aria-label="행사장 지도">
+    <div class="map-toolbar">
+      <button id="zoomOutBtn" aria-label="축소">−</button>
+      <button id="resetViewBtn" aria-label="초기화">⟳</button>
+      <button id="zoomInBtn" aria-label="확대">＋</button>
+    </div>
+    <!-- 외부 SVG (숫자 박스에 id=booth-#) -->
+    <object id="mapSvg" type="image/svg+xml" data="assets/map.svg" class="map-object"></object>
+  </section>
+
+  <!-- 하단 패널(칩 + 리스트) -->
+  <aside id="panel" class="panel">
+    <button id="panelToggle" class="panel-toggle" aria-label="패널 확장">
+      <span class="chevron"></span>
+    </button>
+
+    <div class="chips">
+      <button class="chip is-active" data-tag="sci">과학탐구</button>
+      <button class="chip is-active" data-tag="ai">인공지능</button>
+      <button class="chip is-active" data-tag="math">수학 탐구</button>
+      <button class="chip is-active" data-tag="etc">기타</button>
+      <button class="chip chip-outline" id="chipAll">전체</button>
+    </div>
+
+    <div id="list" class="list"></div>
+  </aside>
+
+  <!-- 리스트 카드 템플릿 -->
+  <template id="itemTpl">
+    <article class="item" data-booth="">
+      <div class="badge"></div>
+      <div class="thumb">동아리 로고</div>
+      <div class="info">
+        <h3 class="title">동아리 이름</h3>
+        <p class="desc">부스 상세 설명</p>
+      </div>
+      <button class="view-btn" aria-label="지도에서 보기">.</button>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
