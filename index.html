@@ -23,18 +23,18 @@
     <object id="mapSvg" type="image/svg+xml" data="assets/map.svg" class="map-object"></object>
   </section>
 
-  <!-- 하단 패널(칩 + 리스트) -->
+  <!-- 하단 패널(칩 + 리스트) : 모바일 고정 패널, 확장 시 전체 덮기 -->
   <aside id="panel" class="panel">
-    <button id="panelToggle" class="panel-toggle" aria-label="패널 확장">
+    <button id="panelToggle" class="panel-toggle" aria-label="목록 확장/축소">
       <span class="chevron"></span>
     </button>
 
     <div class="chips">
-      <button class="chip is-active" data-tag="sci">과학탐구</button>
-      <button class="chip is-active" data-tag="ai">인공지능</button>
-      <button class="chip is-active" data-tag="math">수학 탐구</button>
-      <button class="chip is-active" data-tag="etc">기타</button>
-      <button class="chip chip-outline" id="chipAll">전체</button>
+      <button class="chip is-active" data-tag="sci" aria-pressed="true">과학탐구</button>
+      <button class="chip is-active" data-tag="ai" aria-pressed="true">인공지능</button>
+      <button class="chip is-active" data-tag="math" aria-pressed="true">수학 탐구</button>
+      <button class="chip is-active" data-tag="guitar" aria-pressed="true">기타</button>
+      <button class="chip chip-outline" id="chipAll" aria-pressed="false">전체</button>
     </div>
 
     <div id="list" class="list"></div>
