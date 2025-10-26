@@ -1,0 +1,191 @@
+/* ========== 모바일 우선 색상 토큰 (시안 톤 매칭) ========== */
+:root{
+  /* 배경/텍스트 */
+  --bg:        #f5f6f9; /* 시안의 연한 회청 배경 */
+  --ink:       #111314;
+  --muted:     #6b7380;
+
+  /* 카드/구분선 */
+  --card:      #ffffff;
+  --divider:   #d9d9d9;
+
+  /* 지도 톤 */
+  --pitch:     #ccd8b8; /* 잔디 */
+  --skybar:    #d2d9e4; /* 상단/하단 파스텔 바 */
+
+  /* 칩 색상 */
+  --chip-sci-bg:   #d7e6ff; --chip-sci-fg:#1b3a7a;     /* 과학탐구(파랑) */
+  --chip-ai-bg:    #e9ddff; --chip-ai-fg:#4f3390;     /* 인공지능(보라) */
+  --chip-math-bg:  #fbf2b9; --chip-math-fg:#6a5600;   /* 수학탐구(노랑) */
+  --chip-etc-bg:   #f3f4f7; --chip-etc-fg:#374151;    /* 기타(연회색) */
+  --chip-outline-fg:#374151; --chip-outline-bd:#d5dae5;
+
+  /* 번호 배지(연노랑) & 컨트롤/하이라이트 */
+  --badge:     #f2eecd;
+  --ctrl-bg:   rgba(255,255,255,.92);
+  --ctrl-bd:   #cfd5e2;
+  --hi:        #ffd166; /* 클릭 하이라이트 */
+}
+
+/* ========== 기본 ========== */
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ========== 상단 히어로 (시안 큰 흰 카드) ========== */
+.hero{
+  position: sticky; top:0; z-index: 5;
+  padding: 18px 20px 10px;
+  background: linear-gradient(var(--bg) 0 60%, #d7dde7 100%);
+}
+.hero h1{
+  margin:0;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 28px 20px;
+  font-size: 22px; font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+
+/* ========== 지도 ========== */
+.map-section{
+  position: relative;
+  margin: 0 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 280px;
+  background:
+    linear-gradient(var(--skybar), var(--skybar)) top/100% 56px no-repeat,
+    linear-gradient(var(--skybar), var(--skybar)) bottom/100% 56px no-repeat,
+    var(--pitch);
+  box-shadow: inset 0 0 0 6px rgba(255,255,255,.35);
+}
+.map-object{ width:100%; height:360px; display:block; }
+
+/* 지도 컨트롤 */
+.map-toolbar{
+  position: absolute; right: 10px; top: 10px; z-index: 2;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.map-toolbar button{
+  background: var(--ctrl-bg);
+  border: 1px solid var(--ctrl-bd);
+  border-radius: 10px;
+  padding: 6px 8px;
+  font-size: 16px;
+}
+
+/* ========== 하단 패널(칩 + 리스트) ========== */
+.panel{
+  position: relative;
+  margin: 14px 16px 24px;
+  background: var(--card);
+  border-radius: 24px 24px 18px 18px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,.06);
+  padding-bottom: 8px;
+}
+.panel-toggle{
+  position: absolute; left: 50%; transform: translate(-50%,-50%);
+  top: 0;
+  background: var(--card);
+  border: 1px solid var(--divider);
+  width: 52px; height: 36px; border-radius: 12px;
+  display: grid; place-items:center;
+}
+.panel-toggle .chevron{
+  width: 14px; height: 14px;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+/* 칩 영역 */
+.chips{
+  display:flex; flex-wrap:wrap; gap:10px;
+  padding: 60px 16px 8px; /* 상단 토글 버튼 공간 확보 */
+}
+.chip{
+  border: none; border-radius: 24px; padding: 10px 14px;
+  font-weight: 700; font-size: 14px;
+}
+.chip[data-tag="sci"]{  background: var(--chip-sci-bg);  color: var(--chip-sci-fg); }
+.chip[data-tag="ai"]{   background: var(--chip-ai-bg);   color: var(--chip-ai-fg); }
+.chip[data-tag="math"]{ background: var(--chip-math-bg); color: var(--chip-math-fg); }
+.chip[data-tag="etc"]{  background: var(--chip-etc-bg);  color: var(--chip-etc-fg); }
+
+#chipAll{
+  background: transparent; color: var(--chip-outline-fg);
+  border:1px solid var(--chip-outline-bd);
+  border-radius: 24px; padding: 10px 14px;
+}
+.chip.is-active{ box-shadow: inset 0 0 0 2px rgba(0,0,0,.06); }
+
+/* 리스트 */
+.list{ padding: 8px 16px 4px; }
+.item{
+  display:grid;
+  grid-template-columns: 44px 72px 1fr 14px;
+  align-items:center; gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.item:last-child{ border-bottom:none; }
+
+/* 번호 배지 */
+.badge{
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--badge);
+  display:grid; place-items:center;
+  font-weight: 800;
+}
+
+/* 썸네일(회색 박스) */
+.thumb{
+  width: 72px; height: 72px; border-radius: 12px;
+  background: #e7e8ed; display:grid; place-items:center;
+  color:#8b92a3; font-size: 12px; font-weight:600;
+}
+
+/* 텍스트 */
+.info{ min-width:0; }
+.title{ margin:0 0 6px; font-size: 18px; font-weight: 800; }
+.desc{ margin:0; color: var(--muted); font-size: 14px; }
+
+/* 우측 작은 점 버튼(시안의 회색 점) */
+.view-btn{
+  background: transparent; border: none; color: #9aa2b4;
+  font-size: 18px; transform: translateY(-8px);
+}
+
+/* ========== SVG 하이라이트 ========== */
+.svg-highlight{
+  filter: drop-shadow(0 0 6px rgba(255,209,102,.95));
+  stroke: var(--hi) !important;
+  stroke-width: 3 !important;
+  animation: blink .9s ease-in-out 0s 2;
+}
+@keyframes blink{ 50%{ opacity: .35 } }
+
+/* ========== 반응형 스케일업 (모바일 우선) ========== */
+@media (min-width: 480px){
+  .hero h1{ padding: 32px 22px; font-size: 24px; }
+  .map-object{ height: 400px; }
+  .item{ grid-template-columns: 48px 84px 1fr 16px; gap: 14px; }
+  .badge{ width: 40px; height: 40px; }
+  .thumb{ width: 84px; height: 84px; }
+  .title{ font-size: 19px; }
+}
+@media (min-width: 768px){
+  body{ max-width: 720px; margin: 0 auto; }
+  .hero{ padding: 24px 0 12px; }
+  .map-section{ margin: 0 0 8px; border-radius: 16px; }
+  .panel{ margin: 16px 0 32px; }
+  .map-object{ height: 480px; }
+  .chips{ padding: 64px 20px 12px; gap: 12px; }
+  .list{ padding: 10px 20px 6px; }
+}
