@@ -99,7 +99,7 @@ body{
   z-index: 20;
 }
 
-/* 패널 토글: 기본 ▲ 모양 (위 방향) */
+/* 패널 토글: 기본 ▲ 모양 (위 방향) + 확장 시 ▼ */
 .panel-toggle{
   position: absolute; left: 50%; transform: translate(-50%,-50%);
   top: 0;
@@ -113,6 +113,10 @@ body{
   border-right: 2px solid var(--ink);
   border-bottom: 2px solid var(--ink);
   transform: rotate(-135deg); /* 위쪽 화살표 */
+  transition: transform .28s ease;
+}
+.panel.expanded .panel-toggle .chevron{
+  transform: rotate(45deg); /* 아래쪽 화살표 */
 }
 
 /* 칩 영역 */
