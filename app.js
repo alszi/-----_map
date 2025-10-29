@@ -254,27 +254,27 @@ function onWheel(e){
 
 /* 핀치 줌 */
 function onTouchStart(e){
-  if(e.touches.length===2){
-    e.preventDefault();
-    const [t1,t2]=e.touches;
-    pinchStartDist=distance(t1,t2);
-    pinchStartVB={...vb};
-    const mid=midpoint(t1,t2);
-    pinchCenterSvg=clientToSvg(mid);
+  if(e.touches.length===2){ /* 두손가락 일때 */
+    e.preventDefault();    /* 기본 스크롤 방지 */
+    const [t1,t2]=e.touches; /* 두 터치 */
+    pinchStartDist=distance(t1,t2); /* 시작 거리 */
+    pinchStartVB={...vb}; /* 시작 뷰박스 */
+    const mid=midpoint(t1,t2); /* 중간점 */
+    pinchCenterSvg=clientToSvg(mid); /* 중간점의 SVG 좌표 */
   }
 }
 function onTouchMove(e){
-  if(e.touches.length===2 && pinchStartDist){
-    e.preventDefault();
-    const [t1,t2]=e.touches;
-    const dist=distance(t1,t2);
-    const scale=pinchStartDist?(pinchStartDist/dist):1;
-    const k=scale;
-    const nx=pinchCenterSvg.x-(pinchCenterSvg.x-pinchStartVB.x)*k;
-    const ny=pinchCenterSvg.y-(pinchCenterSvg.y-pinchStartVB.y)*k;
-    const nw=pinchStartVB.width*k;
-    const nh=pinchStartVB.height*k;
-    setViewBox(nx,ny,nw,nh);
+  if(e.touches.length===2 && pinchStartDist){ /* 두손가락 일때, 시작거리가 있을 때 */
+    e.preventDefault(); /* 기본 스크롤 방지 */
+    const [t1,t2]=e.touches; /* 두 터치 */
+    const dist=distance(t1,t2); /* 현재 거리 */
+    const scale=pinchStartDist?(pinchStartDist/dist):1; /* 스케일 계산 */
+    const k=scale; /* 확대/축소 비율 */
+    const nx=pinchCenterSvg.x-(pinchCenterSvg.x-pinchStartVB.x)*k;  /* 새로운 뷰박스 계산 */
+    const ny=pinchCenterSvg.y-(pinchCenterSvg.y-pinchStartVB.y)*k;  /* 새로운 뷰박스 계산 */
+    const nw=pinchStartVB.width*k; /* 새로운 뷰박스 계산 */
+    const nh=pinchStartVB.height*k; /* 새로운 뷰박스 계산 */
+    setViewBox(nx,ny,nw,nh); /* 뷰박스 설정 */
   }
 }
 function onTouchEnd(e){
