@@ -193,13 +193,9 @@ mapObj.addEventListener("load", ()=>{
   }
   const bv=svgRoot.viewBox.baseVal;
 
-  // --- 초기 위치 및 줌 레벨 조정 ---
-  // 1. SVG 파일에서 읽어온 기본 viewBox 값을 vb에 할당합니다.
   vb = {x:bv.x, y:bv.y, width:bv.width, height:bv.height};
 
-  // 2. 초기 줌 레벨을 설정합니다. (예: 0.8 = 20% 확대)
-  //    이 값을 1보다 작게 하면 확대, 크게 하면 축소됩니다.
-  const initialZoomFactor = 0.65; 
+  const initialZoomFactor = 0.95; 
   const centerX = vb.x + vb.width / 2;
   const centerY = vb.y + vb.height / 2;
   vb.width *= initialZoomFactor;
@@ -207,17 +203,13 @@ mapObj.addEventListener("load", ()=>{
   vb.x = centerX - vb.width / 2;
   vb.y = centerY - vb.height / 2;
 
-  // ✨ 초기 위치 미세 조정 (좌/우 이동)
-  // 왼쪽으로 이동하려면 값을 더하고(+), 오른쪽으로 이동하려면 값을 뺍니다(-).
-  // 숫자를 조절하여 이동 거리를 변경할 수 있습니다.
-  vb.x += -105;
-  vb.y += 30;
 
-  // 3. 🚨 누락된 코드 추가: 조정된 viewBox를 SVG에 즉시 적용합니다.
+  vb.x += -5;
+  vb.y += 120;
+
   setViewBox(vb.x, vb.y, vb.width, vb.height);
 
-  vb0 = {...vb}; // 조정된 값을 초기 상태(vb0)로 저장합니다.
-
+  vb0 = {...vb}; 
   bindBoothClicks();
 
   svgRoot.addEventListener("pointerdown", onPointerDown,{passive:false});
