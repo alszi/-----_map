@@ -1,6 +1,6 @@
 /* ================== 데이터 ================== */
 const BOOTHS = [
-  { id:"booth-1", num:1, name:"피지카스트로", desc:"망원경 체험, 회절격자 분광기 제작", tag:"sci", img: "assets/logos/pizikastro.png" },
+  { id:"booth-1", num:1, name:"피지카스트로", desc:"망원경 체험, 회절격자 분광기 제작", tag:"sci", img: "assets/logos/피지카스트로.png" },
   { id:"booth-2", num:2, name:"뉴턴", desc:"텐세그리티 만들기", tag:"sci", img: "assets/logos/뉴턴.jpg" },
   { id:"booth-3", num:3, name:"늘품", desc:"탱탱볼 만들기", tag:"sci", img: "assets/logos/늘품.png" },
   { id:"booth-4", num:4, name:"도담", desc:"오호 만들기", tag:"sci", img: "assets/logos/도담.png" },
@@ -11,7 +11,7 @@ const BOOTHS = [
   { id:"booth-9", num:9, name:"에어로테크", desc:"글라이더 제작 및 비행 원리 체험", tag:"sci", img: "assets/logos/에어로테크.png" },
   { id:"booth-10", num:10, name:"티아", desc:"친환경 천연 입욕제 만들기", tag:"sci", img: "assets/logos/티아.png" },
   { id:"booth-11", num:11, name:"폴리머", desc:"라바램프만들기", tag:"sci", img: "assets/logos/폴리머.png" },
-  { id:"booth-12", num:12, name:"그레이스", desc:"호박 화석 비누 만들기", tag:"sci", img: "assets/logos/그레이스.png" },
+  { id:"booth-12", num:12, name:"그레이스", desc:"호박 화석 비누 만들기", tag:"sci", img: "assets/logos/그레이스.jpg" },
   { id:"booth-13", num:13, name:"하람", desc:"마리모 키우기, 장기 키링 만들기", tag:"sci", img: "assets/logos/하람.png" },
   { id:"booth-14", num:14, name:"아리솔", desc:"지문, 혈액 체취 및 추리 활동", tag:"sci", img: "assets/logos/아리솔.jpg" },
   { id:"booth-15", num:15, name:"데이터무제한", desc:"피지컬 컴퓨팅을 통한 프로그램의 시각화 체험", tag:"ai", img: "assets/logos/데이터무제한.png" },
