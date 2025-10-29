@@ -201,6 +201,7 @@ body{
   width: 72px; height: 72px; border-radius: 12px;
   background: #e7e8ed; display:grid; place-items:center;
   color:#8b92a3; font-size: 12px; font-weight:600;
+  object-fit: cover; /* 이미지가 왜곡되지 않고 채워지도록 함 */
 }
 
 /* 텍스트 */

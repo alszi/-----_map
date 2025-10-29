@@ -1,28 +1,28 @@
 /* ================== 데이터 ================== */
 const BOOTHS = [
-  { id:"booth-1", num:1, name:"피지카스트로", desc:"망원경 체험, 회절격자 분광기 제작", tag:"sci" },
-  { id:"booth-2", num:2, name:"뉴턴", desc:"텐세그리티 만들기", tag:"sci" },
-  { id:"booth-3", num:3, name:"늘품", desc:"탱탱볼 만들기", tag:"sci" },
-  { id:"booth-4", num:4, name:"도담", desc:"오호 만들기", tag:"sci" },
-  { id:"booth-5", num:5, name:"리사", desc:"혈액샘플만들기", tag:"sci" },
-  { id:"booth-6", num:6, name:"실험의 숲", desc:"업사이클링 씨글라스 공예", tag:"sci" },
-  { id:"booth-7", num:7, name:"심쿵", desc:"염기서열 팔찌와 DNA 젤리 모형 만들기", tag:"sci" },
-  { id:"booth-8", num:8, name:"아스클레오피스", desc:"간이현미경 만들기, 폴드스코프 만들기", tag:"sci" },
-  { id:"booth-9", num:9, name:"에어로테크", desc:"글라이더 제작 및 비행 원리 체험", tag:"sci" },
-  { id:"booth-10", num:10, name:"티아", desc:"친환경 천연 입욕제 만들기", tag:"sci" },
-  { id:"booth-11", num:11, name:"폴리머", desc:"라바램프만들기", tag:"sci" },
-  { id:"booth-12", num:12, name:"그레이스", desc:"호박 화석 비누 만들기", tag:"sci" },
-  { id:"booth-13", num:13, name:"하람", desc:"마리모 키우기, 장기 키링 만들기", tag:"sci" },
-  { id:"booth-14", num:14, name:"아리솔", desc:"지문, 혈액 체취 및 추리 활동", tag:"sci" },
-  { id:"booth-15", num:15, name:"데이터무제한", desc:"피지컬 컴퓨팅을 통한 프로그램의 시각화 체험", tag:"ai" },
-  { id:"booth-16", num:16, name:"세미콜론", desc:"게임으로 배우는 인공지능", tag:"ai" },
-  { id:"booth-17", num:17, name:"매드매쓰", desc:"위상 수학과 베이글, 게임이론", tag:"math" },
-  { id:"booth-18", num:18, name:"수학에복종", desc:"이항분포기와 프렉탈 체험", tag:"math" },
-  { id:"booth-19", num:19, name:"앱실론", desc:"쭈온쭈온, 정다면체 만들기", tag:"math" },
-  { id:"booth-20", num:20, name:"에어로테크", desc:"패러글라이딩 체험", tag:"guitar" },
-  { id:"booth-21", num:21, name:"아페토", desc:"학교투어", tag:"guitar" },
-  { id:"booth-22", num:22, name:"온에어(방송부)", desc:"보이는 라디오 진행 체험", tag:"guitar" },
-  { id:"booth-23", num:23, name:"학생회", desc:"운영본부", tag:"guitar" }
+  { id:"booth-1", num:1, name:"피지카스트로", desc:"망원경 체험, 회절격자 분광기 제작", tag:"sci", img: "assets/logos/pizikastro.png" },
+  { id:"booth-2", num:2, name:"뉴턴", desc:"텐세그리티 만들기", tag:"sci", img: "assets/logos/뉴턴.jpg" },
+  { id:"booth-3", num:3, name:"늘품", desc:"탱탱볼 만들기", tag:"sci", img: "assets/logos/늘품.png" },
+  { id:"booth-4", num:4, name:"도담", desc:"오호 만들기", tag:"sci", img: "assets/logos/도담.png" },
+  { id:"booth-5", num:5, name:"리사", desc:"혈액샘플만들기", tag:"sci", img: "assets/logos/리사.png" },
+  { id:"booth-6", num:6, name:"실험의 숲", desc:"업사이클링 씨글라스 공예", tag:"sci", img: "assets/logos/실험의숲.jpg" },
+  { id:"booth-7", num:7, name:"심쿵", desc:"염기서열 팔찌와 DNA 젤리 모형 만들기", tag:"sci", img: "assets/logos/심쿵.png" },
+  { id:"booth-8", num:8, name:"아스클레오피스", desc:"간이현미경 만들기, 폴드스코프 만들기", tag:"sci", img: "assets/logos/아스클레오피스.jpg" },
+  { id:"booth-9", num:9, name:"에어로테크", desc:"글라이더 제작 및 비행 원리 체험", tag:"sci", img: "assets/logos/에어로테크.png" },
+  { id:"booth-10", num:10, name:"티아", desc:"친환경 천연 입욕제 만들기", tag:"sci", img: "assets/logos/티아.png" },
+  { id:"booth-11", num:11, name:"폴리머", desc:"라바램프만들기", tag:"sci", img: "assets/logos/폴리머.png" },
+  { id:"booth-12", num:12, name:"그레이스", desc:"호박 화석 비누 만들기", tag:"sci", img: "assets/logos/그레이스.png" },
+  { id:"booth-13", num:13, name:"하람", desc:"마리모 키우기, 장기 키링 만들기", tag:"sci", img: "assets/logos/하람.png" },
+  { id:"booth-14", num:14, name:"아리솔", desc:"지문, 혈액 체취 및 추리 활동", tag:"sci", img: "assets/logos/아리솔.jpg" },
+  { id:"booth-15", num:15, name:"데이터무제한", desc:"피지컬 컴퓨팅을 통한 프로그램의 시각화 체험", tag:"ai", img: "assets/logos/데이터무제한.png" },
+  { id:"booth-16", num:16, name:"세미콜론", desc:"게임으로 배우는 인공지능", tag:"ai", img: "assets/logos/세미콜론.jpg" },
+  { id:"booth-17", num:17, name:"매드매쓰", desc:"위상 수학과 베이글, 게임이론", tag:"math", img: "assets/logos/매드매쓰.png" },
+  { id:"booth-18", num:18, name:"수학에복종", desc:"이항분포기와 프렉탈 체험", tag:"math", img: "assets/logos/수학에 복종.jpg" },
+  { id:"booth-19", num:19, name:"앱실론", desc:"쭈온쭈온, 정다면체 만들기", tag:"math", img: "assets/logos/엡실론.png" },
+  { id:"booth-20", num:20, name:"에어로테크", desc:"패러글라이딩 체험", tag:"guitar", img: "assets/logos/에어로테크.png" },
+  { id:"booth-21", num:21, name:"아페토", desc:"학교투어", tag:"guitar", img: "assets/logos/아페토.jpg" },
+  { id:"booth-22", num:22, name:"온에어(방송부)", desc:"보이는 라디오 진행 체험", tag:"guitar", img: "assets/logos/온에어.jpg" },
+  { id:"booth-23", num:23, name:"학생회", desc:"운영본부", tag:"guitar", img: "assets/logos/혜윰.png" }
 ];
 
 /* ================== 태그 → 라벨 매핑 ================== */
@@ -132,6 +132,10 @@ function renderList() {
       badgeEl.textContent = b.num;
       badgeEl.dataset.tag = b.tag; // 태그별 배지 색상 자동
 
+      const thumbEl = node.querySelector(".thumb");
+      thumbEl.src = b.img; // 1단계에서 추가한 이미지 경로 설정
+      thumbEl.alt = b.name + " 로고"; // 접근성을 위해 alt 텍스트 설정
+
       node.querySelector(".title").textContent = b.name;
       node.querySelector(".desc").textContent = b.desc;
 
@@ -188,8 +192,31 @@ mapObj.addEventListener("load", ()=>{
     svgRoot.setAttribute("viewBox",`0 0 ${w} ${h}`);
   }
   const bv=svgRoot.viewBox.baseVal;
-  vb={x:bv.x,y:bv.y,width:bv.width,height:bv.height};
-  vb0={...vb};
+
+  // --- 초기 위치 및 줌 레벨 조정 ---
+  // 1. SVG 파일에서 읽어온 기본 viewBox 값을 vb에 할당합니다.
+  vb = {x:bv.x, y:bv.y, width:bv.width, height:bv.height};
+
+  // 2. 초기 줌 레벨을 설정합니다. (예: 0.8 = 20% 확대)
+  //    이 값을 1보다 작게 하면 확대, 크게 하면 축소됩니다.
+  const initialZoomFactor = 0.65; 
+  const centerX = vb.x + vb.width / 2;
+  const centerY = vb.y + vb.height / 2;
+  vb.width *= initialZoomFactor;
+  vb.height *= initialZoomFactor;
+  vb.x = centerX - vb.width / 2;
+  vb.y = centerY - vb.height / 2;
+
+  // ✨ 초기 위치 미세 조정 (좌/우 이동)
+  // 왼쪽으로 이동하려면 값을 더하고(+), 오른쪽으로 이동하려면 값을 뺍니다(-).
+  // 숫자를 조절하여 이동 거리를 변경할 수 있습니다.
+  vb.x += -105;
+  vb.y += 30;
+
+  // 3. 🚨 누락된 코드 추가: 조정된 viewBox를 SVG에 즉시 적용합니다.
+  setViewBox(vb.x, vb.y, vb.width, vb.height);
+
+  vb0 = {...vb}; // 조정된 값을 초기 상태(vb0)로 저장합니다.
 
   bindBoothClicks();
 
