@@ -35,7 +35,8 @@ body{
   margin:0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Pretendard", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 500; /* Pretendard Medium */
   overflow: hidden; /* ✅ 전체 스크롤 막기 */
 }
 
@@ -51,6 +52,11 @@ body{
   padding: 28px 20px;
   font-size: 22px; font-weight: 700;
   box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+#sdfsdf{
+    font-size: 12px;
+    font-weight: 400;
+    color: #8b92a3;
 }
 
 /* ========== 지도 ========== */
